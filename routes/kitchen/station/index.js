@@ -19,7 +19,8 @@ router.get("/:id", function (req, res) {
         res.render("./partials/station", item);
     }
 
-    )});
+    )
+});
 
 
-    module.exports = router;
+module.exports = router;
