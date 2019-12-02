@@ -2,12 +2,12 @@
 
 const router = require("express").Router();
 
-router.get("/:id", function(req, res){
+router.get("/:id", function (req, res) {
 
 
     db.items.findAll({
 
-        where:{
+        where: {
             station: req.params.id
 
         }
@@ -17,6 +17,9 @@ router.get("/:id", function(req, res){
             items: data
         }
         res.render("./partials/station", item);
-});
+    }
 
-module.exports = router;
+    )});
+
+
+    module.exports = router;
