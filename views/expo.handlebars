@@ -1,4 +1,6 @@
 {{!-- Navbar wth greeting and clock --}}
+
+
 <nav class="navbar my-2 ">
 
   <div class="col-6">
@@ -103,48 +105,10 @@
 
   {{!-- card --}}
   <div class="row">
+    {{#each items}}
+    {{> item}}
+    {{/each}}
 
-    <div class="col-3">
-      <div class="card " data-target=" #myModal" data-toggle="modal" style=" max-width: 15rem;">
-
-        <div class="card-header ">
-          <div class="row">
-            <div class="col-6">
-              <p class=" tableN ">Table {{items.orderNumber}}</p>
-            </div>
-            <div class="col-6 text-right">
-
-            </div>
-
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <span><i class="far fa-clock text-dark "></i>{{items.currentTime}}</span>
-
-            </div>
-          </div>
-        </div>
-        <div class="card-body text-dark">
-          <ul class="list-group-flush">
-            <li class="list-group-item">{{items.name}}</li>
-            <small class="list-group-item small">{{items.mods}}</small>
-            <small class="list-group-item small">{{items.mods}}</small>
-            <li class="list-group-item">{{items.name}}</li>
-
-          </ul>
-        </div>
-
-        <div class="card-footer">
-          <div class="row">
-            <div class="col-12 text-right">
-              <i class="float-right fas fa-user text-white">4</i>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
   </div>
   {{!-- 
   end of the card --}}
