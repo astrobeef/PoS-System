@@ -15,5 +15,17 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue : "0:00"
     }
   });
+
+  items.create({
+
+    name: "Caesar Salad",
+    station: 1,
+    mods: "no dressing, S.O.S., extra dressing, no croutons",
+    highlight: "#55AB55",
+    averageTime: "4:00"
+  })
+
   return items;
 };
+
+
