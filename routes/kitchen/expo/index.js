@@ -2,8 +2,20 @@
 
 const router = require("express").Router();
 
-router.get("/", function(req, res){
-    res.send("Getting /kitchen/expo route");
+//Accessing the Models folder
+var db = require('../../../models/');
+
+//Get route
+router.get("/", function (req, res) {
+    db.items.findAll({
+    }).then(function (data) {
+
+        const item = {
+            items: data
+        }
+        res.render("./partials/expo", item);
+    })
+
 });
 
 module.exports = router;
