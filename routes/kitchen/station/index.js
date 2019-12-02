@@ -2,8 +2,24 @@
 
 const router = require("express").Router();
 
-router.get("/:id", function(req, res){
-    res.send(`Getting /kitchen/station/${req.params.id} route`);
-});
+router.get("/:id", function (req, res) {
 
-module.exports = router;
+
+    db.items.findAll({
+
+        where: {
+            station: req.params.id
+
+        }
+    }).then(function (data) {
+
+        const item = {
+            items: data
+        }
+        res.render("./partials/station", item);
+    }
+
+    )});
+
+
+    module.exports = router;
