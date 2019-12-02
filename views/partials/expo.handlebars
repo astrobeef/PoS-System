@@ -1,19 +1,151 @@
+{{!-- Navbar wth greeting and clock --}}
+<nav class="navbar my-2 ">
+
+  <div class="col-6">
+    <h3 class="logo">hello <br>Cibelle,</h3>
+  </div>
+
+  <div class="col-3">
+
+
+  </div>
+  <div class="col-3">
+    <h2 class="timer"></h2>
+
+  </div>
+
+</nav>
+{{!-- End of Navbar  --}}
+
+{{!-- The sidebar  --}}
+<div class="sidebar light-card">
+
+  <a href="#home"><i class="fas fa-utensils"> </i> <br>
+    <p class="sidebarIcon">Kitchen</p>
+  </a>
+  <a href="#services"><i class="fas fa-home"></i> <br>
+    <p class="sidebarIcon">Main</p>
+  </a>
+  <a href="#services"><i class="fas fa-cog"></i> <br>
+    <p class="sidebarIcon">Settings</p>
+  </a>
+
+</div>
+{{!-- end of sidebar  --}}
+
+
+
+
 <div class="container">
+
+
+  {{!-- Modal when order it's clicked --}}
   <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
+    <div class="col">
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="row">
+                <div class="col-6">
+                  <p class=" tableN ">Table 29</p>
+                </div>
+                <div class="col-6">
+                  <p>Server</p>
+                </div>
+              </div>
+              <div class="row">
+
+
+                <div class="col-12">
+                  <i class="fas fa-times-circle " data-dismiss="modal"></i>
+
+
+                </div>
+
+
+              </div>
+            </div>
+            <div class="modal-body">
+              <ul class="list-group-flush">
+                <li class="list-group-item">{item.name}</li>
+                <small class="list-group-item small">- with caramel</small>
+                <small class="list-group-item small">- with chocolate sprinkles</small>
+                <li class="list-group-item">Caesar Salad</li>
+                <li class="list-group-item">Cheesecake</li>
+              </ul>
+
+            </div>
+            <div class=" modal-footer">
+              <div class="row">
+                <div class="col-12">
+                  <span><i class="text-left far fa-clock text-dark "></i>2min</span>
+
+
+                  <input id="complete" class="btn btn-success" type="button" value="Complete">
+                  <input id="deleteOrder" class="btn btn-danger" type="button" value="Delete">
+                  <input id="recall" class="btn btn-danger" type="button" value="Recall">
+
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  {{!-- End of the Modal--}}
+
+
+
+  {{!-- card --}}
+  <div class="row">
+
+    <div class="col-3">
+      <div class="card " data-target=" #myModal" data-toggle="modal" style=" max-width: 15rem;">
+
+        <div class="card-header ">
+          <div class="row">
+            <div class="col-6">
+              <p class=" tableN ">Table 29</p>
+            </div>
+            <div class="col-6 text-right">
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span><i class="far fa-clock text-dark "></i>2min</span>
+
+            </div>
+          </div>
+        </div>
+        <div class="card-body text-dark">
+          <ul class="list-group-flush">
+            <li class="list-group-item">Vanilla Ice Cream</li>
+            <small class="list-group-item small">- with caramel</small>
+            <small class="list-group-item small">- with chocolate sprinkles</small>
+            <li class="list-group-item">Caesar Salad</li>
+
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-12 text-right">
+              <i class="float-right fas fa-user text-white">4</i>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {{!-- 
+  end of the card --}}
 </div>
