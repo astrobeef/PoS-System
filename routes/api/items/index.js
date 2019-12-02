@@ -2,9 +2,23 @@
 
 
 const router = require("express").Router();
+const db = require("../../../models");
 
 router.get("/", function (req, res) {
-    res.send("Getting /api/items route");
+    db.items.findAll({}).then(function (dbItems) {
+        res.json(dbItems);
+    });
 });
+
+router.post("/", function (req, res) {
+
+    console.log(req.body);
+
+    res.sendStatus(200);
+})
+
+router.get("/:id", function (req, res) {
+
+})
 
 module.exports = router;
