@@ -10,7 +10,8 @@ router.get("/", function (req, res) {
     db.items.findAll({
     }).then(function (data) {
         const item = {
-            items: data
+            items: data,
+            layout : "kitchen"
         }
         res.render("expo", item);
     })

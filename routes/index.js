@@ -14,9 +14,10 @@ router.get("/", function (req, res) {
     }).then(function (data) {
 
         const item = {
-            items: data
+            items: data,
+            layout : "server"
         }
-        res.render("./", item);
+        res.render("main", item);
     })
 
 });
