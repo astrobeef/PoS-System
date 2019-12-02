@@ -22,6 +22,6 @@ module.exports = function (sequelize, DataTypes) {
     highlight : "#F3E5AB",
     averageTime : "2:00"
   }])
-
+ 
   return menu;
 };

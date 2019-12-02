@@ -2,6 +2,9 @@
 
 const router = require("express").Router();
 
+var db = require('../../../models/');
+
+
 router.get("/:id", function (req, res) {
 
 
@@ -14,9 +17,10 @@ router.get("/:id", function (req, res) {
     }).then(function (data) {
 
         const item = {
-            items: data
+            items: data,
+            layout : "kitchen"
         }
-        res.render("./partials/station", item);
+        res.render("station", item);
     }
 
     )

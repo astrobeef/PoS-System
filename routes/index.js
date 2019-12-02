@@ -2,11 +2,24 @@
 
 const router = require("express").Router();
 
+//Accessing the Models folder
+var db = require('../models');
+
 router.use("/api", require("./api"));
 router.use("/kitchen", require("./kitchen"));
 
-router.get("/", function(req, res){
-    res.send("Getting main route");
+//Get route
+router.get("/", function (req, res) {
+    db.items.findAll({
+    }).then(function (data) {
+
+        const item = {
+            items: data,
+            layout : "server"
+        }
+        res.render("main", item);
+    })
+
 });
 
 module.exports = router;
