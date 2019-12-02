@@ -11,9 +11,15 @@ router.get("/", function(req, res){
 
 router.post("/", function(req, res){
 
+    db.items.create(req.body).then(function(dbItems){
+        res.json(dbItems)
+    })
+
     console.log(req.body);
 
     res.sendStatus(200);
+
+
 })
 
 router.get("/:id", function(req, res){
