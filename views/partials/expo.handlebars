@@ -48,7 +48,7 @@
             <div class="modal-header">
               <div class="row">
                 <div class="col-6">
-                  <p class=" tableN ">Table 29</p>
+                  <p class=" tableN ">Table {{items.orderNumber}}</p>
                 </div>
                 <div class="col-6">
                   <p>Server</p>
@@ -68,18 +68,18 @@
             </div>
             <div class="modal-body">
               <ul class="list-group-flush">
-                <li class="list-group-item">{item.name}</li>
-                <small class="list-group-item small">- with caramel</small>
-                <small class="list-group-item small">- with chocolate sprinkles</small>
-                <li class="list-group-item">Caesar Salad</li>
-                <li class="list-group-item">Cheesecake</li>
+                <li class="list-group-item">{{items.name}}</li>
+                <small class="list-group-item small">{{items.mods}}</small>
+                <small class="list-group-item small">{{items.mods}}</small>
+                <li class="list-group-item">{{items.name}}</li>
+                <li class="list-group-item">{{items.name}}</li>
               </ul>
 
             </div>
             <div class=" modal-footer">
               <div class="row">
                 <div class="col-12">
-                  <span><i class="text-left far fa-clock text-dark "></i>2min</span>
+                  <span><i class="text-left far fa-clock text-dark "></i>{{items.currentTime}}</span>
 
 
                   <input id="complete" class="btn btn-success" type="button" value="Complete">
@@ -110,7 +110,7 @@
         <div class="card-header ">
           <div class="row">
             <div class="col-6">
-              <p class=" tableN ">Table 29</p>
+              <p class=" tableN ">Table {{items.orderNumber}}</p>
             </div>
             <div class="col-6 text-right">
 
@@ -119,17 +119,17 @@
           </div>
           <div class="row">
             <div class="col-6">
-              <span><i class="far fa-clock text-dark "></i>2min</span>
+              <span><i class="far fa-clock text-dark "></i>{{items.currentTime}}</span>
 
             </div>
           </div>
         </div>
         <div class="card-body text-dark">
           <ul class="list-group-flush">
-            <li class="list-group-item">Vanilla Ice Cream</li>
-            <small class="list-group-item small">- with caramel</small>
-            <small class="list-group-item small">- with chocolate sprinkles</small>
-            <li class="list-group-item">Caesar Salad</li>
+            <li class="list-group-item">{{items.name}}</li>
+            <small class="list-group-item small">{{items.mods}}</small>
+            <small class="list-group-item small">{{items.mods}}</small>
+            <li class="list-group-item">{{items.name}}</li>
 
           </ul>
         </div>

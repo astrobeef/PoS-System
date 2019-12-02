@@ -1,15 +1,16 @@
 //Route for /api/items
 
+
 const router = require("express").Router();
 const db = require("../../../models");
 
-router.get("/", function(req, res){
-    db.items.findAll({}).then(function(dbItems){
+router.get("/", function (req, res) {
+    db.items.findAll({}).then(function (dbItems) {
         res.json(dbItems);
     });
 });
 
-router.post("/", function(req, res){
+router.post("/", function (req, res) {
 
     db.items.create(req.body).then(function(dbItems){
         res.json(dbItems)
@@ -22,7 +23,7 @@ router.post("/", function(req, res){
 
 })
 
-router.get("/:id", function(req, res){
+router.get("/:id", function (req, res) {
 
 })
 
