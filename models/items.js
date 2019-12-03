@@ -27,6 +27,17 @@ module.exports = function (sequelize, DataTypes) {
     currentTime: "0:00"
   })
 
+  items.create({
+
+    name: "Green Salad",
+    orderNumber: 21,
+    station: 1,
+    status: "working",
+    mods: "no dressing,",
+    highlight: "#55AB55",
+    averageTime: "4:00",
+    currentTime: "0:00"
+  })
   return items;
 };
 
