@@ -15,9 +15,9 @@ router.get("/:id", function (req, res) {
             ...items,
             layout: "kitchen"
         }
+        console.log(item);
         res.render("station", item);
-    }
-    )
+    })
 });
 function seperateItemsByProgress(items_db) {
     var items = {
