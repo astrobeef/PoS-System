@@ -5,7 +5,7 @@ const db = require("../../../models");
 
 
 router.get("/", function(req, res){
-    db.menu.findAll({}).then(function(dbMenu){
+    db.menus.findAll({}).then(function(dbMenu){
         res.json(dbMenu);
     })
 });
@@ -14,7 +14,7 @@ router.get("/:id", function(req, res){
 
     console.log("Getting info on menu item with id " + req.params.id);
 
-    db.menu.findAll({
+    db.menus.findAll({
         where : {
             id : req.params.id
         }
