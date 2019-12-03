@@ -12,7 +12,7 @@ router.get("/:id", function (req, res) {
     }).then(function (data) {
         const items = seperateItemsByProgress(data);
         const item = {
-            items,
+            ...items,
             layout: "kitchen"
         }
         res.render("station", item);
@@ -45,11 +45,6 @@ function seperateItemsByProgress(items_db) {
 
     return items;
 }
-
-
-
-
-
 
 module.exports = router;
 

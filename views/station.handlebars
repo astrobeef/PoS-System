@@ -57,26 +57,23 @@
     {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
     <div class="col-6 startCol">
 
-      {{#each items.NotStarted}}
+      {{#each NotStarted}}
       {{> toCook}}
       {{/each}}
 
     </div>
 
-    {{!-- if status of item is "working" call partial cooking handlebar  --}}
 
-    <div class="col-6 cookingCol"></div>
-    {{#each items.Working}}
-    {{> cooking}}
-    {{/each}}
+    <div class="col-6 cookingCol">
+      {{#each Working}}
+      {{> cooking}}
+      {{/each}}
+    </div>
 
   </div>
 
-</div>
-
-</div>
+  {{!-- if status of item is "working" call partial cooking handlebar  --}}
 
 
-</div>
 
 </div>
