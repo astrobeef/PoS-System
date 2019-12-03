@@ -46,11 +46,6 @@ function seperateItemsByProgress(items_db) {
     return items;
 }
 
-
-
-
-
-
 module.exports = router;
 
 

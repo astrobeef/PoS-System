@@ -66,3 +66,20 @@ router.get("/:id", function (req, res) {
 })
 
 module.exports = router;
+
+
+
+
+router.get("/:id", function (req, res) {
+
+    db.items.findAll({
+        where: {
+            id: req.params.id
+        }
+
+    }).then(function (dbItems) {
+        res.json(dbItems);
+    });
+
+})
+

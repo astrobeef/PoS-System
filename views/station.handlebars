@@ -54,23 +54,27 @@
 
   {{!-- orders to be cooked --}}
   <div class="row">
-    <div class="col-6">
+    {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
+    <div class="col-6 startCol">
 
       {{#each NotStarted}}
-
       {{> toCook}}
       {{/each}}
-    </div>
-    <div class="col-6">
 
+    </div>
+
+
+    <div class="col-6 cookingCol">
       {{#each Working}}
       {{> cooking}}
       {{/each}}
     </div>
-    {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
-
-    {{!-- if status of item is "working" call partial cooking handlebar  --}}
 
   </div>
+
+  {{!-- if status of item is "working" call partial cooking handlebar  --}}
+
+  {{!-- if status of item is "working" call partial cooking handlebar  --}}
+
 
 </div>
