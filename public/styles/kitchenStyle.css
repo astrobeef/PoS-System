@@ -1,6 +1,21 @@
-.list-group-item {
-  line-height: 2.5;
-} 
+
+
+.orderHead {
+   background-color: rgb(167, 152, 182);
+   color: black;
+  font-weight: bolder;
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px; 
+  letter-spacing: 1px;
+      }
+
+.containerKitchen {
+    margin-top: 0;
+    margin: 0;
+      }
+      
+ /* end of kicthen view  */
+
 
 
 /********* EXPO view and MODAL style  *******/
@@ -11,8 +26,20 @@ body {
   height: 120vh;
 }
 
-ul,
-li {
+.ulStation, 
+.liStation {
+  margin: 0 !important;
+  padding: 5px !important;
+  text-align: left;
+  font-size: 14px;
+  color: black;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 1.7px;
+  font-weight: bolder;
+
+}
+.ulExpo,
+.liExpo {
   margin: 0 !important;
   padding: 5px !important;
   text-align: left;
@@ -43,35 +70,50 @@ li {
   background-color: #ddd;
 }
 
-.modal-header {
-  background-color: green;
+.modalHeader {
+  background-color: #90a900;
   font-size: 20px;
   font-family: 'Cabin', sans-serif;
   color: white;
+  letter-spacing: 1.5px;
 }
 
 .fa-times-circle {
-  font-size: 40px;
+  font-size: 35px;
 }
 
-.container {
+.expoContainer {
   margin-top: 20px;
   margin-left: 50px;
   height: 100%;
 }
 
-.tableN,
-p {
-  font-size: 17px;
+.tableN
+ {
+  font-size: 15px;
 }
 
-.card {
+#complete ,  #deleteOrder {
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 1;
+}
+.mods {
+  line-height: 0 !important;
+}
+.stationCard {
+  box-shadow: 2px 2px 5px 4px rgba(0, 0, 255, .2);
+  margin-top: 8px;
+  border-style: ridge;
+
+
+}
+.expoCard {
   box-shadow: 2px 2px 5px 4px rgba(0, 0, 255, .2);
   margin-top: 10px;
   border-style: ridge;
 }
 
-.card-header {
+.cardHeader {
   color: black;
   font-weight: bolder;
   font-family: 'Cabin', sans-serif;
@@ -81,18 +123,18 @@ p {
   background-color: white;
 }
 
-.card-body {
+.cardBody {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
 }
 
-.card-footer {
+.cardFooter {
   font-size: 14px;
   letter-spacing: 5px;
   top: 1px;
   font-family: 'Cabin', sans-serif;
-  background-color: green;
+  background-color:#90a900;
   color: white;
 }
 
@@ -124,9 +166,16 @@ p {
   /* overflow-x: hidden; */
   padding-top: 40px;
 }
+.stationNav {
+  background-color: white;
+  font-family: 'Cabin', sans-serif;
+  margin-top: 0px !important;
+  letter-spacing: 2px;
+  font-weight: bolder;
 
-nav,
-.navbar {
+
+}
+.expoNav {
   background-color: white;
   margin-top: 0px !important;
 
@@ -147,10 +196,6 @@ nav,
 
 }
 
-.fa-check-circle {
-  font-size: 25px;
-  color: green
-}
 
 .sidebarIcon {
   font-size: 14px;
@@ -158,7 +203,7 @@ nav,
   letter-spacing: 1px;
 }
 
-.small {
+.mods {
   padding: 1px;
   margin-right: 0px;
   color: gray;
@@ -168,6 +213,5 @@ nav,
 .sidebar i {
   box-shadow: 1px blanchedalmond;
 }
-
-
 /******* end of the expo styling *******/
+

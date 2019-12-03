@@ -1,16 +1,13 @@
 {{!-- Navbar wth greeting and clock --}}
 
 
-<nav class="navbar my-2 ">
+<nav class="navbar expoNav my-2 ">
 
   <div class="col-6">
     <h3 class="logo">hello <br>Cibelle,</h3>
   </div>
 
-  <div class="col-3">
 
-
-  </div>
   <div class="col-3">
     <h2 class="timer"></h2>
 
@@ -38,8 +35,8 @@
 
 
 
-<div class="container">
-
+<div class="container expoContainer">
+  {{#each items}}
 
   {{!-- Modal when order it's clicked --}}
   <div class="row">
@@ -47,58 +44,54 @@
       <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-md">
           <div class="modal-content">
-            <div class="modal-header">
-              <div class="row">
-                <div class="col-6">
-                  <p class=" tableN ">Table {{items.orderNumber}}</p>
-                </div>
-                <div class="col-6">
-                  <p>Server</p>
-                </div>
-              </div>
-              <div class="row">
+            <div class="modal-header modalHeader">
 
-
-                <div class="col-12">
-                  <i class="fas fa-times-circle " data-dismiss="modal"></i>
-
-
-                </div>
-
+              <div class="col-3">
+                <p class="tableN ">Table {{this.orderNumber}}</p>
 
               </div>
+              <div class="col-3">
+                <p class="tableN"><i class=" far fa-clock text-white "> {{this.currentTime}}</i></p>
+              </div>
+
+              <div class="col-3 text-right">
+                <i class="  fas fa-times-circle " data-dismiss="modal"></i>
+              </div>
+
+
             </div>
-            <div class="modal-body">
-              <ul class="list-group-flush">
-                <li class="list-group-item">{{items.name}}</li>
-                <small class="list-group-item small">{{items.mods}}</small>
-                <small class="list-group-item small">{{items.mods}}</small>
-                <li class="list-group-item">{{items.name}}</li>
-                <li class="list-group-item">{{items.name}}</li>
+            <div class="px-2  modal-body">
+              <ul class=" ulExpo list-group-flush">
+                <li class=" liExpo list-group-item">{{this.name}} <br> <small class="mods">{{this.mods}}</small> </li>
+
+
+
               </ul>
 
             </div>
             <div class=" modal-footer">
-              <div class="row">
-                <div class="col-12">
-                  <span><i class="text-left far fa-clock text-dark "></i>{{items.currentTime}}</span>
+              <div class="col text-right">
 
-
-                  <input id="complete" class="btn btn-success" type="button" value="Complete">
-                  <input id="deleteOrder" class="btn btn-danger" type="button" value="Delete">
-                  <input id="recall" class="btn btn-danger" type="button" value="Recall">
-
-                </div>
+                <input id="complete" class="btn btn-success" type="button" value="Complete" data-id="{{this.id}}">
+                <input id="deleteOrder" class="btn btn-danger" type="button" value=" Delete" data-id="{{this.id}}">
+                {{!-- <input id="recall" class="btn btn-danger" type="button" value="Recall"> --}}
               </div>
 
 
 
+
+
             </div>
+
+
+
+
           </div>
         </div>
       </div>
     </div>
   </div>
+  {{/each}}
   {{!-- End of the Modal--}}
 
 
