@@ -10,16 +10,16 @@ router.use("/kitchen", require("./kitchen"));
 
 //Get route
 router.get("/", function (req, res) {
-    db.menu.findAll({
+    db.menus.findAll({
     }).then(function (data) {
 
-        const menu = {
+        const menus = {
             menu: data,
             layout: "server"
         }
         console.log("------MAIN : Rendering main page ... ------>>>");
-        console.log(`------>>> Passing in ${menu} ------>>>`);
-        res.render("main", menu);
+        console.log(`------>>> Passing in ${menus} ------>>>`);
+        res.render("main", menus);
     });
 
 });
