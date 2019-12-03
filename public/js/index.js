@@ -32,11 +32,13 @@ const API = {
   }
 };
 
-$menuItems.click(function (event) {
-
-  let itemID = trimForID($(event.target).attr("id"));
-
+$("#select-menu").change(function(event){
+  console.log(event);
+  
+  let itemID = $(event.target.selectedOptions[0]).attr("id");
   console.log(itemID);
+
+  itemID = trimForID(itemID);
 
   API.getMenuItem(itemID).then(function (menuItem, err) {
 
@@ -53,7 +55,7 @@ $menuItems.click(function (event) {
 
   });
 
-});
+})
 
 function clearPreviousModsIfExists()
 {
@@ -178,6 +180,9 @@ $sendToItemDB.click(function (event) {
   }
 
   console.log("Sent?  Check ITEM DB");
+
+  clearPreviousModsIfExists();
+
 
   /** Need to add code to:
   * - compress the mods array into a single string.
