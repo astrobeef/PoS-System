@@ -117,7 +117,7 @@ $mods.click(function (event) {
   const $target = $(event.target);
 
 
-  const modID = trimForID($target.attr("id"));
+  const modID = trimForID($target.attr("id")) + 1;
   console.log(modID);
 
   console.log(event.currentTarget.childNodes[1].childNodes[modID].childNodes[0].checked);
