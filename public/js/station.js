@@ -1,30 +1,81 @@
-<<<<<<< HEAD
-var $stationCard=$(".stationCard");
+var $toCook = $(".toCook");
+var $cooking = $(".cooking");
+var $recallOrder=$(".recallOrder");
+var $main=$(".main")
 
-$stationCard.on("dblclick", function(){
-  
+
+$toCook.on("dblclick", function () {
+
   console.log("changed status to: working");
   var id = $(this).data("id");
   console.log(id);
-  var status = $(this).data("status")
-  
-  var working =  "working"
+  // var status = $(this).data("status")
+
+  var working = "working"
+
+  // Send the PUT request.
+  $.ajax("/api/items/" + id, {
+    type: "PUT",
+    data: {
+      status: working
+    }
+  }).then(
+    function () {
+      console.log("changed status to: working");
+      // Reload the page to get the updated list
+      window.location.reload();
+    }
+  );
+});
+
+
+$cooking.on("dblclick", function () {
+
+  console.log("changed status to: finished");
+  var id = $(this).data("id");
+  console.log(id);
+  // var status = $(this).data("status")
+
   var finished = "finished"
 
-// Send the PUT request.
-$.ajax("/api/items/" + id, {
-  type: "PUT",
-  data: {
-    status: working;
-  }
-}).then(
-  function() {
-    console.log("changed status to: working");
-    // Reload the page to get the updated list
-    window.location.reload();
-  }
-);
+  // Send the PUT request.
+  $.ajax("/api/items/" + id, {
+    type: "PUT",
+    data: {
+      status: finished
+    }
+  }).then(
+    function () {
+      console.log("changed status to: finished");
+      // Reload the page to get the updated list
+      window.location.reload();
+    }
+  );
 });
+
+
+$recallOrder.on("click", function () {
+  $.ajax({
+    url: "api/items/",
+    type: "GET"
+  }).then(
+    function () {
+      console.log("worked")
+    }
+  )
+});
+
+
+$main.on("click", function () {
+  $.ajax({
+    url: "/",
+    type: "GET"
+  }).then(
+    function () {
+      console.log("worked")
+    }
+  )
+})
 
 
 
@@ -61,20 +112,18 @@ $.ajax("/api/items/" + id, {
 // };
 
 // // refreshExamples gets new examples from the db and repopulates the list
-=======
 // Get references to page elements
-var $recallOrder = $(".recallOrder");
+// var $recallOrder = $(".recallOrder");
 
 
-$recallOrder.on("click", function () {
-  $.ajax({
-    url: "api/items",
-    type: "GET"
-  });
+// $recallOrder.on("click", function () {
+//   $.ajax({
+//     url: "api/items",
+//     type: "GET"
+//   });
 
-})
+// })
 
->>>>>>> 01f0439f438cb7d9412d489a602fe73475682a5d
 // var refreshExamples = function () {
 //   API.getExamples().then(function (data) {
 //     var $examples = data.map(function (example) {
@@ -88,7 +137,6 @@ $recallOrder.on("click", function () {
 //           "data-id": example.id
 //         })
 //         .append($a);
-<<<<<<< HEAD
 
 //       var $button = $("<button>")
 //         .addClass("btn btn-danger float-right delete")
@@ -139,7 +187,6 @@ $recallOrder.on("click", function () {
 //   });
 // };
 
-=======
 
 //       var $button = $("<button>")
 //         .addClass("btn btn-danger float-right delete")
@@ -190,7 +237,6 @@ $recallOrder.on("click", function () {
 //   });
 // };
 
->>>>>>> 01f0439f438cb7d9412d489a602fe73475682a5d
 // // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);

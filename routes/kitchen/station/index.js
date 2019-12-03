@@ -12,12 +12,12 @@ router.get("/:id", function (req, res) {
     }).then(function (data) {
         const items = seperateItemsByProgress(data);
         const item = {
-            items,
+            ...items,
             layout: "kitchen"
         }
+        console.log(item);
         res.render("station", item);
-    }
-    )
+    })
 });
 function seperateItemsByProgress(items_db) {
     var items = {
