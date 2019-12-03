@@ -15,7 +15,7 @@ router.get("/", function (req, res) {
 
         const item = {
             items: data,
-            layout : "server"
+            layout: "server"
         }
         res.render("main", item);
     })
