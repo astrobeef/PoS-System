@@ -13,8 +13,8 @@ router.get("/", function (req, res) {
     db.menu.findAll({
     }).then(function (data) {
 
-        const item = {
-            items: data,
+        const menu = {
+            menu: data,
             layout: "server"
         }
         console.log("------MAIN : Rendering main page ... ------>>>");
