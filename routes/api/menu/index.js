@@ -12,6 +12,8 @@ router.get("/", function(req, res){
 
 router.get("/:id", function(req, res){
 
+    console.log("Getting info on menu item with id " + req.params.id);
+
     db.menu.findAll({
         where : {
             id : req.params.id
