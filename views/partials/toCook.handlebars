@@ -1,6 +1,6 @@
 <div class="col-6 startCol">
 
-    <div class="card stationCard" style="max-width: 300px;">
+    <div class="card stationCard" data-id="{{this.id}}" data-status="{{this.status}}" style="max-width: 300px;">
 
         <div class=" card-header orderHead mx-0 px-1 py-0">
             <div class="row">
@@ -17,7 +17,7 @@
         <div class="card-body cardBody">
             <ul class="  ulStation list-group-flush">
                 <li class="  liStation list-group-item">{{this.name}}</li>
-            </ul>
+            </ul> 
         </div>
     </div>
 </div>

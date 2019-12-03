@@ -1,15 +1,65 @@
-// Get references to page elements
-var $recallOrder = $(".recallOrder");
+var $stationCard = $(".stationCard");
+
+$stationCard.on("dblclick", function () {
+
+  console.log("changed status to: working");
+  var id = $(this).data("id");
+  console.log(id);
+  var status = $(this).data("status")
+
+  var working = "working"
+  var finished = "finished"
+
+  // Send the PUT request.
+  $.ajax("/api/items/" + id, {
+    type: "PUT",
+    data: {
+      status: working
+    }
+  }).then(
+    function () {
+      console.log("changed status to: working");
+      // Reload the page to get the updated list
+      window.location.reload();
+    }
+  );
+});
 
 
-$recallOrder.on("click", function () {
-  $.ajax({
-    url: "api/items",
-    type: "GET"
-  });
 
-})
+// // Get references to page elements
+// var $exampleText = $("#example-text");
+// var $exampleDescription = $("#example-description");
+// var $submitBtn = $("#submit");
+// var $exampleList = $("#example-list");
 
+// // The API object contains methods for each kind of request we'll make
+// var API = {
+//   saveExample: function (example) {
+//     return $.ajax({
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       type: "POST",
+//       url: "api/examples",
+//       data: JSON.stringify(example)
+//     });
+//   },
+//   getExamples: function () {
+//     return $.ajax({
+//       url: "api/examples",
+//       type: "GET"
+//     });
+//   },
+//   deleteExample: function (id) {
+//     return $.ajax({
+//       url: "api/examples/" + id,
+//       type: "DELETE"
+//     });
+//   }
+// };
+
+// // refreshExamples gets new examples from the db and repopulates the list
 // var refreshExamples = function () {
 //   API.getExamples().then(function (data) {
 //     var $examples = data.map(function (example) {
