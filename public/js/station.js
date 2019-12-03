@@ -14,7 +14,7 @@ $stationCard.on("dblclick", function(){
 $.ajax("/api/items/" + id, {
   type: "PUT",
   data: {
-    status: working;
+    status: working
   }
 }).then(
   function() {
