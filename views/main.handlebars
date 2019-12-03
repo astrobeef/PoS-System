@@ -2,17 +2,23 @@
 
 <h6>Order Number</h6>
 
-<input id = "order-number" class="form-control" type="text" placeholder="Order Number">
+<input id = "order-number" class="form-control col-4" type="text" placeholder="Order Number">
 
   </div>
 
 <h6>Select Menu Item</h6>
 
-<div class="menu-items">
-
+  <div class="form-group menu-items col-4">
+    <select class="form-control" id="select-menu">
     {{#each menu}}
     {{> menuItem}}
     {{/each}}
+    </select>
+  </div>
+  
+
+<div class="">
+
 
 </div>
 
