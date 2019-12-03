@@ -1,19 +1,103 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
-        </div>
-      </div>
+<!-- Navbar wth greeting and clock -->
+<nav class="navbar stationNav my-2 ">
+
+  <div class="col-6">
+    <h4>Good Morning,</h4>
+
+
+  </div>
+  <div class="col-3">
+    <h4>Station : Salads</h4>
+
+
+
+  </div>
+  <div class="col-3">
+
+    <h2 class="timer"></h2>
+
+
+  </div>
+
+
+</nav>
+<!-- End of Navbar  -->
+
+
+<!-- The sidebar -->
+<div class="sidebar light-card">
+
+  <a href="#"><i class="fas fa-redo-alt"></i> <br>
+    <p class="sidebarIcon">Recall Order</p>
+  </a>
+  <a href="#services"><i class="fas fa-exclamation"></i> <br>
+    <p class="sidebarIcon">Delayed</p>
+  </a>
+  <a href="#services"><i class="fas fa-home"></i> <br>
+    <p class="sidebarIcon">Main</p>
+  </a>
+
+
+</div>
+<!-- end of sidebar -->
+
+
+
+{{!-- container with orders to cook --}}
+
+<div class="container containerKitchen">
+  <div class="row center-align">
+
+    <div class="col-6">
+      <h3>Start</h3>
+
+    </div>
+    <div class="col-6">
+      <h3>Cooking</h3>
+
     </div>
   </div>
+
+  {{!-- orders to be cooked --}}
+  <div class="row">
+
+    {{#each items}}
+    {{> toCook}}
+    {{/each}}
+
+    <div class="col-6 cookingCol">
+      <div class="card " style="max-width: 300px;">
+
+        <div class="  orderHead mx-0 py-0">
+          <div class="row">
+            <div class="col-6">
+              <p class="orderHeader">Table 10</p>
+            </div>
+
+            <div class=" float-right col-6">
+              <p class="orderHeader">02:00</p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-12">
+          <div class="card-body">
+
+            <ul class=" list-group-flush">
+              <li class="list-group-item">test</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
 </div>

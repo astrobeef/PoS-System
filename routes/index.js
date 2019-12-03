@@ -13,9 +13,9 @@ router.get("/", function (req, res) {
     db.menu.findAll({
     }).then(function (data) {
 
-        const menu = {
-            menu: data,
-            layout : "server"
+        const item = {
+            items: data,
+            layout: "server"
         }
         console.log("------MAIN : Rendering main page ... ------>>>");
         console.log(`------>>> Passing in ${menu} ------>>>`);

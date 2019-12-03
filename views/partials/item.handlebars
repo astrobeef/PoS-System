@@ -1,35 +1,31 @@
 <div class="col-3">
-    <div class="card " data-target=" #myModal" data-toggle="modal" style=" max-width: 15rem;">
+    <div class="card expoCard" data-target=" #myModal" data-toggle="modal" style=" max-width: 16rem;">
 
-        <div class="card-header ">
+        <div class="card-header cardHeader">
             <div class="row">
                 <div class="col-6">
                     <p class=" tableN ">Table {{this.orderNumber}}</p>
                 </div>
                 <div class="col-6 text-right">
-
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-6">
                     <span><i class="far fa-clock text-dark "></i>{{this.currentTime}}</span>
-
                 </div>
-            </div>
-        </div>
-        <div class="card-body text-dark">
-            <ul class="list-group-flush">
-                <li class="list-group-item">{{this.name}}</li>
-                <span style="{{this.highlight}}"><small class="list-group-item small">{{this.mods}}</small></span>
 
-                <small class="list-group-item small">{{this.mods}}</small>
-                <li class="list-group-item">{{this.name}}</li>
+            </div>
+
+
+        </div>
+        <div class="card-body cardBody text-dark">
+            <ul class=" ulExpo list-group-flush">
+                <li class=" liExpo list-group-item">{{this.name}} <br>
+                    <small class="mods">{{this.mods}}</small> </li>
+
+
+
 
             </ul>
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer cardFooter">
             <div class="row">
                 <div class="col-12 text-right">
                     <i class="float-right fas fa-user text-white">4</i>
@@ -40,3 +36,11 @@
 
     </div>
 </div>
+
+//
+
+{{!-- code to make highlight work
+
+style="background-color: {{this.highlight}}"
+
+ --}}
