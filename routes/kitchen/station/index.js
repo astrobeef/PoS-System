@@ -9,10 +9,8 @@ router.get("/:id", function (req, res) {
 
 
     db.items.findAll({
-
         where: {
             station: req.params.id
-
         }
     }).then(function (data) {
 
