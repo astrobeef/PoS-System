@@ -30,7 +30,7 @@
     <p class="sidebarIcon">Delayed</p>
   </a>
   <a href="#services"><i class="fas fa-home"></i> <br>
-    <p class="sidebarIcon">Main</p>
+    <p class="sidebarIcon main">Main</p>
   </a>
 
 
@@ -53,45 +53,24 @@
   </div>
 
   {{!-- orders to be cooked --}}
-  <div class="row" >
+  <div class="row">
+    <div class="col-6">
 
-    {{#each items}}
-    {{> toCook}}
-    {{/each}}
+      {{#each NotStarted}}
 
-<div class="col-6 cookingCol"  >
-      <div class="card " style="max-width: 300px;">
-
-        <div class="  orderHead mx-0 py-0">
-          <div class="row">
-            <div class="col-6">
-              <p class="orderHeader">Table 10</p>
-            </div>
-
-            <div class=" float-right col-6">
-              <p class="orderHeader">02:00</p>
-            </div>
-          </div>
-
-        </div>
-
-
-        <div class="col-12">
-          <div class="card-body">
-
-            <ul class=" list-group-flush">
-              <li class="list-group-item">test</li>
-
-            </ul>
-
-          </div>
-        </div>
-
-      </div>
-
+      {{> toCook}}
+      {{/each}}
     </div>
+    <div class="col-6">
 
+      {{#each Working}}
+      {{> cooking}}
+      {{/each}}
+    </div>
+    {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
+
+    {{!-- if status of item is "working" call partial cooking handlebar  --}}
 
   </div>
 
-</div> 
+</div>
