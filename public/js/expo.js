@@ -51,31 +51,29 @@ $recallOrder.on("click", function () {
 
 });
 
-setInterval(function () {
+// setInterval(function () {
 
-  $times = $(".current-time");
+//   $times = $(".current-time");
 
-  let element = 0;
+//   let element = 0;
 
-  while($times[element])
-  {
-    const $time = $($times[element]);
-    let timeID = $time.attr("id");
-    timeID.split("-");
-    timeID = parseInt(timeID[timeID.length - 1]);
-    console.log(timeID);
+//   while($times[element])
+//   {
+//     const $time = $($times[element]);
+//     let timeID = $time.attr("id");
+//     timeID.split("-");
+//     timeID = parseInt(timeID[timeID.length - 1]);
+//     console.log(timeID);
 
-    $time.text(incrementTime($time.text()));
-
-   
-    element++;
-
-    sendNewTime(timeID, $time.text());
-
-  };
+//     $time.text(incrementTime($time.text()));
 
 
-}, 1000);
+//     element++;
+
+//     sendNewTime(timeID, $time.text());
+
+//   };
+
 
 function sendNewTime(id, newTime)
 {

@@ -63,7 +63,10 @@ body {
 
 }
 
-
+.sidebar i {
+  box-shadow: 1px blanchedalmond;
+  color:#FF9A00
+}
 .sidebarIcon {
   font-size: 14px;
   font-weight: lighter;

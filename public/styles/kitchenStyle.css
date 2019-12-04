@@ -1,25 +1,39 @@
+.cooking-orderHead {
+  background-color: green;
+  color: black;
+ font-weight: bolder;
+ font-family: 'Raleway', sans-serif;
+ font-size: 14px;
+ letter-spacing: 1px;
+}
 
 
-.orderHead {
-   background-color: rgb(167, 152, 182);
+.cooking-orderHead {
+   background-color: green;
    color: black;
   font-weight: bolder;
   font-family: 'Raleway', sans-serif;
-  font-size: 14px; 
+  font-size: 14px;
   letter-spacing: 1px;
-      }
+}
+
+      .toCook-orderHead {
+        background-color: rgb(167, 152, 182);
+        color: black;
+       font-weight: bolder;
+       font-family: 'Raleway', sans-serif;
+       font-size: 14px; 
+       letter-spacing: 1px;
+           }
 
 .containerKitchen {
     margin-top: 0;
     margin: 0;
-    
-   
-      }
       
+}      
 .stationStart, .stationCooking,.stationRecall {
   margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: 'Poppins', sans-serif;  
   font-size: 30px;
   letter-spacing: 1;
  color:#ccd1cf
@@ -199,6 +213,8 @@ body {
  
 }
 
+
+
 .mods {
   padding: 1px;
   margin-right: 0px;
@@ -211,4 +227,3 @@ body {
   color:#FF9A00
 }
 /******* end of the expo styling *******/
-
