@@ -4,7 +4,7 @@ const router = require("express").Router();
 
 router.use("/expo", require("./expo"));
 router.use("/station", require("./station"));
-router.use("/recall", require("./recall"));
+
 
 router.get("/", function (req, res) {
     res.send("Getting /kitchen route");

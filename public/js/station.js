@@ -9,8 +9,6 @@ $toCook.on("dblclick", function () {
   var status = $(this).data("status")
 
   var working = "working"
-
-
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
     type: "PUT",
@@ -53,5 +51,33 @@ $cooking.on("dblclick", function () {
 
 
 
+<<<<<<< HEAD
+// $recallOrder.on("click", function () {
+//   console.log("worked")
+
+//   $.ajax({
+//     url: "/api/items/",
+//     type: "GET"
+//   }).then(
+//     function () {
+//       console.log('worked too')
+//     }
+//   )
+
+// })
 
 
+$recallOrder.on("click", function () {
+  $.ajax({
+    url: "/station/:id/recall",
+    type: "GET"
+  }).then(
+    function () {
+      console.log('worked too')
+    })
+}
+)
+=======
+
+
+>>>>>>> 961fc48c9dd00afd17f512b26aa266bdbb6c6ee1
