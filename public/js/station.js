@@ -49,22 +49,42 @@ $cooking.on("dblclick", function () {
 });
 
 
+function sendNewTime(id, newTime) {
+  $.ajax({
+    url: "/api/items/" + id,
+    type: "PUT",
+    data: {
+      currentTime: newTime
+    }
+  }).then(function (res, err) {
+    console.log("Sent time");
+  })
+}
 
+function incrementTime(currentTime) {
+  let newTime = currentTime;
 
-// $recallOrder.on("click", function () {
-//   console.log("worked")
+  newTime = newTime.split(":");
 
-//   $.ajax({
-//     url: "/api/items/",
-//     type: "GET"
-//   }).then(
-//     function () {
-//       console.log('worked too')
-//     }
-//   )
+  let minutes = parseInt(newTime[0]);
+  let seconds = parseInt(newTime[1]);
 
-// })
+  if (seconds < 59) {
+    seconds++;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+  }
+  else {
+    minutes++;
+    seconds = 0;
+  }
 
+  newTime = `${minutes}:${seconds}`;
+
+  return newTime;
+
+};
 
 $recallOrder.on("click", function () {
   $.ajax({
