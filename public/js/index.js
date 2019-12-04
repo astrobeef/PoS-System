@@ -4,7 +4,7 @@ const $sendToItemDB = $(".send-to-db");
 const $reset = $(".reset");
 
 let newItem = {
-  
+
   name: "",
   orderNumber: -1,
   station: -1,
@@ -25,16 +25,16 @@ const API = {
   },
   setMenuItem: function (item) {
     return $.ajax({
-      url : "api/items/",
-      type : "POST",
-      data : item
+      url: "api/items/",
+      type: "POST",
+      data: item
     })
   }
 };
 
-$("#select-menu").change(function(event){
+$("#select-menu").change(function (event) {
   console.log(event);
-  
+
   let itemID = $(event.target.selectedOptions[0]).attr("id");
   console.log(itemID);
 
@@ -57,17 +57,14 @@ $("#select-menu").change(function(event){
 
 })
 
-function clearPreviousModsIfExists()
-{
+function clearPreviousModsIfExists() {
   modsToSend.length = 0;
 
-  if($(".new-mod").length)
-  {
+  if ($(".new-mod").length) {
     console.log("does exist");
     $(".new-mod").remove();
   }
-  else
-  {
+  else {
     console.log("does NOT exist");
   }
 }
@@ -104,8 +101,7 @@ function generateModifications(mods) {
 
 }
 
-function trimForID(textID)
-{
+function trimForID(textID) {
 
   textID = textID.split("-");
   const id = parseInt(textID[textID.length - 1]);
@@ -159,20 +155,17 @@ $sendToItemDB.click(function (event) {
 
   console.log("Sending");
 
-  if(modsToSend.length > 0)
-  {
+  if (modsToSend.length > 0) {
     let modsToSend_Str = modsToSend.join(",");
     newItem.mods = modsToSend_Str;
   }
-  else
-  {
+  else {
     newItem.mods = "";
   }
 
   newItem.orderNumber = $("#order-number").val();
 
-  if(newItem.name)
-  {
+  if (newItem.name) {
     console.log(newItem);
     console.log("^^^ newItem");
     console.log("------------");
@@ -193,6 +186,6 @@ $sendToItemDB.click(function (event) {
 
 });
 
-$reset.click(function(event){
+$reset.click(function (event) {
   location.reload();
 })
