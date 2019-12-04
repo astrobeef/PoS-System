@@ -23,7 +23,7 @@
     <p class="sidebarIcon">Salads</p>
   </a>
 
-   <a href="http://localhost:3000/kitchen/station/2"><i class="fas fa-ice-cream"></i> <br>
+  <a href="http://localhost:3000/kitchen/station/2"><i class="fas fa-ice-cream"></i> <br>
     <p class="sidebarIcon">Desserts</p>
   </a>
   <a href="http://localhost:3000"><i class="fas fa-home"></i> <br>
@@ -42,7 +42,7 @@
 
 
 <div class="container expoContainer">
-  {{#each items}}
+    {{#each items as |item|}}
 
   {{!-- Modal when order it's clicked --}}
   <div class="row">
@@ -53,11 +53,11 @@
             <div class="modal-header modalHeader">
 
               <div class="col-3">
-                <p class="tableN ">Table {{this.orderNumber}}</p>
+                <p class="tableN ">Table {{item.[0].orderNumber}}</p>
 
               </div>
               <div class="col-3">
-                <p class="tableN"><i class=" far fa-clock text-white "> {{this.currentTime}}</i></p>
+                <p class="tableN"><i class=" far fa-clock text-white "> {{item.[0].currentTime}}</i></p>
               </div>
 
               <div class="col-3 text-right">
@@ -104,8 +104,11 @@
 
   {{!-- card --}}
   <div class="row">
-    {{#each items}}
+    {{#each items as |item|}}
+
     {{> item}}
+    
+
     {{/each}}
 
   </div>
