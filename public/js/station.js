@@ -1,3 +1,5 @@
+// import { INSPECT_MAX_BYTES } from "buffer";
+
 var $toCook = $(".toCook");
 var $cooking = $(".cooking")
 var $restart = $(".restart")
@@ -19,6 +21,8 @@ $toCook.on("dblclick", function () {
     }
   }).then(
     function () {
+
+
       console.log("changed status to: working");
       $toCook.addClass("bg-green")
       // Reload the page to get the updated list
@@ -29,6 +33,14 @@ $toCook.on("dblclick", function () {
 
 
 });
+
+
+// function highlight(status){
+
+//   if(status ==="working"){
+//     this.hig
+//   }
+// }
 
 
 $restart.on("dblclick", function () {
