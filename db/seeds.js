@@ -23,30 +23,6 @@ items.create({
     currentTime: "0:00"
 })
 
-items.create({
-    
-    name: "Test Salad",
-    orderNumber: 10,
-    station: 1,
-    status: "not working",
-    mods: "no dressing, no croutons",
-    highlight: "#55AB55",
-    averageTime: "4:00",
-    currentTime: "0:00"
-})
-
-items.create({
-    
-    name: "Test Desert",
-    orderNumber: 10,
-    station: 2,
-    status: "not working",
-    mods: "extra chocolate",
-    highlight: "#55AB55",
-    averageTime: "2:00",
-    currentTime: "0:00"
-})
-
 
 menus.bulkCreate([
     {
