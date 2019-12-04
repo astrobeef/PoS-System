@@ -49,11 +49,6 @@ $cooking.on("dblclick", function () {
 });
 
 
-
-
-<<<<<<< HEAD
-
-
 function sendNewTime(id, newTime)
 {
   $.ajax({
