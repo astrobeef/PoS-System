@@ -82,7 +82,7 @@ function incrementTime(currentTime)
   else
   {
     minutes++;
-    seconds = 0;
+    seconds = "00";
   }
 
   newTime = `${minutes}:${seconds}`;
