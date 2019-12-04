@@ -32,10 +32,10 @@ const API = {
   }
 };
 
-$("#select-menu").change(function (event) {
+$(".menu-items").click(function (event) {
   console.log(event);
 
-  let itemID = $(event.target.selectedOptions[0]).attr("id");
+  let itemID = $(event.target).attr("id");
   console.log(itemID);
 
   itemID = trimForID(itemID);
@@ -177,13 +177,6 @@ $sendToItemDB.click(function (event) {
 
   clearPreviousModsIfExists();
 
-
-  /** Need to add code to:
-  * - compress the mods array into a single string.
-  * - prepare the entire object to be sent to DB.
-  * - run an AJAX call to the API to send the item into the DB.
-  * - (optional) update the pages of expo and station-- not necessary because the user cannot currently be on all screens at once.
-  */
 
 });
 
