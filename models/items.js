@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
     mods: DataTypes.STRING,
     highlight: {
       type: DataTypes.STRING,
-      defaultValue: "#b6acbf"
+      defaultValue: "##0000ff"
     },
     averageTime: DataTypes.STRING,
     currentTime: {

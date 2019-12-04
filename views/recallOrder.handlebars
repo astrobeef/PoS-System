@@ -10,28 +10,39 @@
     </div>
 </nav>
 <!-- End of Navbar  -->
+
+
 <!-- The sidebar -->
 <div class="sidebar light-card">
     <a href="../{{station}}"><i class="fas fa-arrow-left"></i> <br>
         <p class="sidebarIcon ">Return</p>
     </a>
 </div>
+
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-12">
             <h3 class="stationRecall text-center">Completed Orders</h3>
         </div>
     </div>
+
     <div class="row">
         {{#each items}}
         <div class="col-6 cookingCol">
+
             <div class="card stationCard restart" data-id="{{this.id}}" data-status="{{this.status}}"
                 style="max-width: 300px;">
+
                 <div class=" card-header orderHead mx-0 px-1 py-0">
                     <div class="row">
                         <div class="col-6">
                             <p class="orderHead">Table {{this.orderNumber}}</p>
                         </div>
+
                         <div class="col-6 text-right">
                             <span><i class="far fa-clock text-dark "></i>{{this.currentTime}}</span>
                         </div>

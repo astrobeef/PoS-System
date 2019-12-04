@@ -11,6 +11,7 @@ $toCook.on("dblclick", function () {
   console.log(id);
   var status = $(this).data("status")
 
+
   var working = "working"
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
@@ -21,12 +22,16 @@ $toCook.on("dblclick", function () {
   }).then(
     function () {
 
-   
+
       console.log("changed status to: working");
+      $toCook.addClass("bg-green")
       // Reload the page to get the updated list
       window.location.reload();
     }
   );
+
+
+
 });
 
 
@@ -86,21 +91,19 @@ $cooking.on("dblclick", function () {
 });
 
 
-function sendNewTime(id, newTime)
-{
+function sendNewTime(id, newTime) {
   $.ajax({
-    url : "/api/items/" + id,
-    type : "PUT",
-    data : {
-      currentTime : newTime
+    url: "/api/items/" + id,
+    type: "PUT",
+    data: {
+      currentTime: newTime
     }
-  }).then(function (res, err){
+  }).then(function (res, err) {
     console.log("Sent time");
   })
 }
 
-function incrementTime(currentTime)
-{
+function incrementTime(currentTime) {
   let newTime = currentTime;
 
   newTime = newTime.split(":");
@@ -108,16 +111,13 @@ function incrementTime(currentTime)
   let minutes = parseInt(newTime[0]);
   let seconds = parseInt(newTime[1]);
 
-  if(seconds < 59)
-  {
+  if (seconds < 59) {
     seconds++;
-    if(seconds < 10)
-    {
+    if (seconds < 10) {
       seconds = "0" + seconds;
     }
   }
-  else
-  {
+  else {
     minutes++;
     seconds = 0;
   }
@@ -138,3 +138,5 @@ $recallOrder.on("click", function () {
     })
 }
 )
+
+
