@@ -7,12 +7,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  {{!-- <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8"> --}}
+  <link rel="stylesheet" href="/styles/serverStyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Raleway&display=swap" rel="stylesheet">
 
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9b22d73af0.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
   <title>Waitor?Waitress</title>
 </head>
@@ -21,6 +25,16 @@
   {{{body}}}
 </body>
 
-<script src = "./js/index.js"></script>
+<script src="./js/index.js"></script>
+<script>
+
+
+  //Setting up the date and appending to the HTML page
+  var today = moment().format('h:mm a');
+  console.log(today)
+  $(".timer").append(today);
+
+
+</script>
 
 </html>

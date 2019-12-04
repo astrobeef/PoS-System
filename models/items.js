@@ -8,7 +8,10 @@ module.exports = function (sequelize, DataTypes) {
     orderNumber: DataTypes.INTEGER,
     station: DataTypes.INTEGER,      // 1 : Salad, 2 : Dessert
     mods: DataTypes.STRING,
-    highlight: DataTypes.STRING,
+    highlight: {
+      type: DataTypes.STRING,
+      defaultValue: "#b6acbf"
+    },
     averageTime: DataTypes.STRING,
     currentTime: {
       type: DataTypes.STRING,
@@ -16,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
- 
+
   return items;
 };
 

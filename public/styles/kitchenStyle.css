@@ -4,7 +4,7 @@
    background-color: rgb(167, 152, 182);
    color: black;
   font-weight: bolder;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px; 
   letter-spacing: 1px;
       }
@@ -12,8 +12,19 @@
 .containerKitchen {
     margin-top: 0;
     margin: 0;
+    
+   
       }
       
+.stationStart, .stationCooking,.stationRecall {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  
+  font-size: 30px;
+  letter-spacing: 1;
+ color:#ccd1cf
+
+}
  /* end of kicthen view  */
 
 
@@ -33,8 +44,8 @@ body {
   text-align: left;
   font-size: 14px;
   color: black;
-  font-family: 'Cabin', sans-serif;
-  letter-spacing: 1.7px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
   font-weight: bolder;
 
 }
@@ -45,37 +56,18 @@ body {
   text-align: left;
   font-size: 14px;
   color: black;
-  font-family: 'Cabin', sans-serif;
-  letter-spacing: 1.7px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
   font-weight: bolder;
 }
 
-.pagination {
-  display: inline-block;
-
-}
-
-.pagination a {
-  color: black;
-
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd;
-  margin: 0 4px;
-  font-size: 30px;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
 
 .modalHeader {
   background-color: #90a900;
   font-size: 20px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: white;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 .fa-times-circle {
@@ -94,7 +86,7 @@ body {
 }
 
 #complete ,  #deleteOrder {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 1;
 }
 .mods {
@@ -116,7 +108,7 @@ body {
 .cardHeader {
   color: black;
   font-weight: bolder;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 13px;
   padding: 8px;
   letter-spacing: 1px;
@@ -125,7 +117,7 @@ body {
 
 .cardBody {
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: lighter;
 }
 
@@ -133,26 +125,29 @@ body {
   font-size: 14px;
   letter-spacing: 5px;
   top: 1px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color:#90a900;
   color: white;
 }
 
 .logo {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 30spx;
   margin-left: 40px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   font-weight: bolder;
 }
 
 .timer {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   font-size: 20px;
   margin-left: 140px;
 }
+.stationN{
+  font-family: 'Raleway', sans-serif;
 
+}
 /* Style the sidebar - fixed full height */
 .sidebar {
   height: 100%;
@@ -168,9 +163,9 @@ body {
 }
 .stationNav {
   background-color: white;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-top: 0px !important;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: bolder;
 
 
@@ -201,6 +196,7 @@ body {
   font-size: 14px;
   font-weight: lighter;
   letter-spacing: 1px;
+ 
 }
 
 .mods {
@@ -212,6 +208,7 @@ body {
 
 .sidebar i {
   box-shadow: 1px blanchedalmond;
+  color:#FF9A00
 }
 /******* end of the expo styling *******/
 

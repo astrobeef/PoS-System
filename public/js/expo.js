@@ -38,14 +38,14 @@ $completeOrder.on("click", function () {
 
 
 $recallOrder.on("click", function () {
+  console.log("worked")
 
   $.ajax({
-    url: "api/items/",
+    url: "/api/items/",
     type: "GET"
   }).then(
     function () {
-
-      console.log("worked")
+      console.log('worked too')
     }
   )
 
