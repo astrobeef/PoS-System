@@ -51,6 +51,7 @@ $cooking.on("dblclick", function () {
 
 
 
+<<<<<<< HEAD
 // $recallOrder.on("click", function () {
 //   console.log("worked")
 
@@ -76,3 +77,7 @@ $recallOrder.on("click", function () {
     })
 }
 )
+=======
+
+
+>>>>>>> 961fc48c9dd00afd17f512b26aa266bdbb6c6ee1

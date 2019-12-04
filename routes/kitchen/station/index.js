@@ -13,7 +13,9 @@ router.get("/:id", function (req, res) {
         const items = seperateItemsByProgress(data);
         const item = {
             ...items,
-            layout: "kitchen"
+            layout: "kitchen",
+            station : req.params.id
+
         }
         console.log(item);
         res.render("station", item);
