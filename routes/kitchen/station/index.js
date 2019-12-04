@@ -59,7 +59,8 @@ router.get("/:id/recall", function (req, res) {
     }).then(function (data) {
         const item = {
             items: data,
-            layout: "kitchen"
+            layout: "kitchen",
+            station : req.params.id
 
         }
         res.render("recallOrder", item);

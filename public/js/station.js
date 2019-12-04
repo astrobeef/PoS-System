@@ -74,10 +74,51 @@ $cooking.on("dblclick", function () {
 });
 
 
+function sendNewTime(id, newTime)
+{
+  $.ajax({
+    url : "/api/items/" + id,
+    type : "PUT",
+    data : {
+      currentTime : newTime
+    }
+  }).then(function (res, err){
+    console.log("Sent time");
+  })
+}
 
+function incrementTime(currentTime)
+{
+  let newTime = currentTime;
 
+  newTime = newTime.split(":");
 
+<<<<<<< HEAD
 
+=======
+  let minutes = parseInt(newTime[0]);
+  let seconds = parseInt(newTime[1]);
+
+  if(seconds < 59)
+  {
+    seconds++;
+    if(seconds < 10)
+    {
+      seconds = "0" + seconds;
+    }
+  }
+  else
+  {
+    minutes++;
+    seconds = 0;
+  }
+
+  newTime = `${minutes}:${seconds}`;
+
+  return newTime;
+>>>>>>> faf399f723ad9e27c4a6e0906f5ae399c9aa9817
+
+};
 
 $recallOrder.on("click", function () {
   $.ajax({
@@ -88,4 +129,8 @@ $recallOrder.on("click", function () {
       console.log('worked too')
     })
 }
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> faf399f723ad9e27c4a6e0906f5ae399c9aa9817
