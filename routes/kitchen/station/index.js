@@ -13,7 +13,9 @@ router.get("/:id", function (req, res) {
         const items = seperateItemsByProgress(data);
         const item = {
             ...items,
-            layout: "kitchen"
+            layout: "kitchen",
+            station : req.params.id
+
         }
         console.log(item);
         res.render("station", item);
@@ -46,6 +48,25 @@ function seperateItemsByProgress(items_db) {
     return items;
 }
 
+
+
+router.get("/:id/recall", function (req, res) {
+    db.items.findAll({
+
+        where: {
+            status: "finished"
+        }
+    }).then(function (data) {
+        const item = {
+            items: data,
+            layout: "kitchen"
+
+        }
+        res.render("recallOrder", item);
+        console.log(data)
+    })
+
+});
 module.exports = router;
 
 

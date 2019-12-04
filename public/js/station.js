@@ -9,8 +9,6 @@ $toCook.on("dblclick", function () {
   var status = $(this).data("status")
 
   var working = "working"
-
-
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
     type: "PUT",
@@ -53,6 +51,7 @@ $cooking.on("dblclick", function () {
 
 
 
+<<<<<<< HEAD
 
 
 function sendNewTime(id, newTime)
@@ -96,3 +95,14 @@ function incrementTime(currentTime)
   return newTime;
 
 };
+
+$recallOrder.on("click", function () {
+  $.ajax({
+    url: "/station/:id/recall",
+    type: "GET"
+  }).then(
+    function () {
+      console.log('worked too')
+    })
+}
+)
