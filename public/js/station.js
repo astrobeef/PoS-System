@@ -1,7 +1,32 @@
 var $toCook = $(".toCook");
 var $cooking = $(".cooking")
+var $restart = $(".restart")
 
 $toCook.on("dblclick", function () {
+
+  console.log("changed status to: working");
+  var id = $(this).data("id");
+  console.log(id);
+  var status = $(this).data("status")
+
+  var working = "working"
+  // Send the PUT request.
+  $.ajax("/api/items/" + id, {
+    type: "PUT",
+    data: {
+      status: working
+    }
+  }).then(
+    function () {
+      console.log("changed status to: working");
+      // Reload the page to get the updated list
+      window.location.reload();
+    }
+  );
+});
+
+
+$restart.on("dblclick", function () {
 
   console.log("changed status to: working");
   var id = $(this).data("id");
@@ -68,6 +93,9 @@ function incrementTime(currentTime)
 
   newTime = newTime.split(":");
 
+<<<<<<< HEAD
+
+=======
   let minutes = parseInt(newTime[0]);
   let seconds = parseInt(newTime[1]);
 
@@ -88,6 +116,7 @@ function incrementTime(currentTime)
   newTime = `${minutes}:${seconds}`;
 
   return newTime;
+>>>>>>> faf399f723ad9e27c4a6e0906f5ae399c9aa9817
 
 };
 
@@ -100,4 +129,8 @@ $recallOrder.on("click", function () {
       console.log('worked too')
     })
 }
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> faf399f723ad9e27c4a6e0906f5ae399c9aa9817
