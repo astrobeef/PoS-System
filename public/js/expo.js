@@ -51,70 +51,70 @@ $recallOrder.on("click", function () {
 
 });
 
-setInterval(function () {
+// setInterval(function () {
 
-  $times = $(".current-time");
+//   $times = $(".current-time");
 
-  let element = 0;
+//   let element = 0;
 
-  while($times[element])
-  {
-    const $time = $($times[element]);
-    let timeID = $time.attr("id");
-    timeID.split("-");
-    timeID = parseInt(timeID[timeID.length - 1]);
-    console.log(timeID);
+//   while($times[element])
+//   {
+//     const $time = $($times[element]);
+//     let timeID = $time.attr("id");
+//     timeID.split("-");
+//     timeID = parseInt(timeID[timeID.length - 1]);
+//     console.log(timeID);
 
-    $time.text(incrementTime($time.text()));
-
-   
-    element++;
-
-    sendNewTime(timeID, $time.text());
-
-  };
+//     $time.text(incrementTime($time.text()));
 
 
-}, 1000);
+//     element++;
 
-function sendNewTime(id, newTime)
-{
-  $.ajax({
-    url : "/api/items/" + id,
-    type : "PUT",
-    data : {
-      currentTime : newTime
-    }
-  }).then(function (res, err){
-    console.log("Sent time");
-  })
-}
+//     sendNewTime(timeID, $time.text());
 
-function incrementTime(currentTime)
-{
-  let newTime = currentTime;
+//   };
 
-  newTime = newTime.split(":");
 
-  let minutes = parseInt(newTime[0]);
-  let seconds = parseInt(newTime[1]);
+// }, 1000);
 
-  if(seconds < 59)
-  {
-    seconds++;
-    if(seconds < 10)
-    {
-      seconds = "0" + seconds;
-    }
-  }
-  else
-  {
-    minutes++;
-    seconds = 0;
-  }
+// function sendNewTime(id, newTime)
+// {
+//   $.ajax({
+//     url : "/api/items/" + id,
+//     type : "PUT",
+//     data : {
+//       currentTime : newTime
+//     }
+//   }).then(function (res, err){
+//     console.log("Sent time");
+//   })
+// }
 
-  newTime = `${minutes}:${seconds}`;
+// function incrementTime(currentTime)
+// {
+//   let newTime = currentTime;
 
-  return newTime;
+//   newTime = newTime.split(":");
 
-};
+//   let minutes = parseInt(newTime[0]);
+//   let seconds = parseInt(newTime[1]);
+
+//   if(seconds < 59)
+//   {
+//     seconds++;
+//     if(seconds < 10)
+//     {
+//       seconds = "0" + seconds;
+//     }
+//   }
+//   else
+//   {
+//     minutes++;
+//     seconds = 0;
+//   }
+
+//   newTime = `${minutes}:${seconds}`;
+
+//   return newTime;
+
+// };

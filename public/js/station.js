@@ -1,7 +1,37 @@
 var $toCook = $(".toCook");
 var $cooking = $(".cooking")
+var $restart = $(".restart")
 
 $toCook.on("dblclick", function () {
+
+  console.log("changed status to: working");
+  var id = $(this).data("id");
+  console.log(id);
+  var status = $(this).data("status")
+
+
+  var working = "working"
+  // Send the PUT request.
+  $.ajax("/api/items/" + id, {
+    type: "PUT",
+    data: {
+      status: working
+    }
+  }).then(
+    function () {
+      console.log("changed status to: working");
+      $toCook.addClass("bg-green")
+      // Reload the page to get the updated list
+      window.location.reload();
+    }
+  );
+
+
+
+});
+
+
+$restart.on("dblclick", function () {
 
   console.log("changed status to: working");
   var id = $(this).data("id");
@@ -96,3 +126,5 @@ $recallOrder.on("click", function () {
     })
 }
 )
+
+

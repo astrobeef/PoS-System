@@ -1,21 +1,13 @@
 <!-- Navbar  -->
 <nav class="navbar stationNav my-2 ">
-
-
     <div class="row">
         <div class="col-6 ">
             <h3 class="logo">Our logo!</h3>
-
         </div>
-
-
     </div>
     <div class="col-3">
-
         <h4 class="timer "></h4>
-
     </div>
-
 </nav>
 <!-- End of Navbar  -->
 
@@ -25,19 +17,20 @@
     <a href="../{{station}}"><i class="fas fa-arrow-left"></i> <br>
         <p class="sidebarIcon ">Return</p>
     </a>
-
-
 </div>
+
+
+
+
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-
             <h3 class="stationRecall text-center">Completed Orders</h3>
         </div>
     </div>
-    <div class="row">
 
+    <div class="row">
         {{#each items}}
         <div class="col-6 cookingCol">
 
@@ -54,7 +47,6 @@
                             <span><i class="far fa-clock text-dark "></i>{{this.currentTime}}</span>
                         </div>
                     </div>
-
                 </div>
                 <div class="card-body cardBody">
                     <ul class="  ulStation list-group-flush">
@@ -63,9 +55,6 @@
                 </div>
             </div>
         </div>
-
-
         {{/each}}
-
     </div>
 </div>
