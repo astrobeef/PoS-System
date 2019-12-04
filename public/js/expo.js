@@ -75,46 +75,44 @@ $recallOrder.on("click", function () {
 //   };
 
 
-// }, 1000);
+function sendNewTime(id, newTime)
+{
+  $.ajax({
+    url : "/api/items/" + id,
+    type : "PUT",
+    data : {
+      currentTime : newTime
+    }
+  }).then(function (res, err){
+    console.log("Sent time");
+  })
+}
 
-// function sendNewTime(id, newTime)
-// {
-//   $.ajax({
-//     url : "/api/items/" + id,
-//     type : "PUT",
-//     data : {
-//       currentTime : newTime
-//     }
-//   }).then(function (res, err){
-//     console.log("Sent time");
-//   })
-// }
+function incrementTime(currentTime)
+{
+  let newTime = currentTime;
 
-// function incrementTime(currentTime)
-// {
-//   let newTime = currentTime;
+  newTime = newTime.split(":");
 
-//   newTime = newTime.split(":");
+  let minutes = parseInt(newTime[0]);
+  let seconds = parseInt(newTime[1]);
 
-//   let minutes = parseInt(newTime[0]);
-//   let seconds = parseInt(newTime[1]);
+  if(seconds < 59)
+  {
+    seconds++;
+    if(seconds < 10)
+    {
+      seconds = "0" + seconds;
+    }
+  }
+  else
+  {
+    minutes++;
+    seconds = "00";
+  }
 
-//   if(seconds < 59)
-//   {
-//     seconds++;
-//     if(seconds < 10)
-//     {
-//       seconds = "0" + seconds;
-//     }
-//   }
-//   else
-//   {
-//     minutes++;
-//     seconds = 0;
-//   }
+  newTime = `${minutes}:${seconds}`;
 
-//   newTime = `${minutes}:${seconds}`;
+  return newTime;
 
-//   return newTime;
-
-// };
+};

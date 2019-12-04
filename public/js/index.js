@@ -61,6 +61,7 @@ function clearPreviousModsIfExists() {
   modsToSend.length = 0;
 
   if ($(".new-mod").length) {
+    $("#select-menu")[0].selectedIndex = 0;
     console.log("does exist");
     $(".new-mod").remove();
   }

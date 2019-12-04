@@ -119,7 +119,7 @@ function incrementTime(currentTime) {
   }
   else {
     minutes++;
-    seconds = 0;
+    seconds = "00";
   }
 
   newTime = `${minutes}:${seconds}`;
@@ -137,6 +137,4 @@ $recallOrder.on("click", function () {
       console.log('worked too')
     })
 }
-)
-
-
+);
