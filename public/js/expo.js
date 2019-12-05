@@ -21,7 +21,7 @@ $deleteOrder.on("click", function () {
       // Reload the page to get the updated list 
       location.reload();
     })
-})
+});
 
 $completeOrder.on("click", function () {
 
@@ -106,6 +106,7 @@ function generateItemsForModal(items, parent) {
     const itemMod = $("<small>").addClass("mods").text(item.mods);
 
     listItem.append(itemName);
+    listItem.append("<br>");
     listItem.append(itemMod);
 
     $modalList.append(listItem);
