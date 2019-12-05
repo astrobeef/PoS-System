@@ -41,6 +41,17 @@ router.delete("/:id", function (req, res) {
     });
 });
 
+//Deletes all order items
+router.delete("/orderNumber/:num", function(req,res){
+    db.items.destroy({
+        where : {
+            orderNumber : req.params.num
+        }
+    }).then(function(dbItems){
+        res.json(dbItems);
+    })
+})
+
 
 //update current time and status
 

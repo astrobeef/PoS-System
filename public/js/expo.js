@@ -26,10 +26,10 @@ $deleteOrder.on("click", function () {
 $completeOrder.on("click", function () {
 
   console.log("working")
-  var id = $(this).data("id");
+  const orderNumber = $(this).data("id");
 
   // Send the DELETE request.
-  $.ajax("/api/items/" + id, {
+  $.ajax("/api/items/orderNumber/" + orderNumber, {
     type: "DELETE"
   }).then(
     function () {
@@ -113,6 +113,7 @@ function generateItemsForModal(items, parent) {
 
   $("#modal-order-number").text(items[0].orderNumber);
   $("#modal-time").text(items[0].currentTime);
+  $("#complete").attr("data-id", items[0].orderNumber);
 
 }
 
