@@ -2,20 +2,18 @@
 <nav class="navbar stationNav my-2 ">
   <div class="row">
 
-    <div class="col-6">
-      <h3 class="logo">Our Logo here!</h4>
 
-    </div>
-    <div class="col-3">
-      <h4>Station : Salads</h4>
+    <h3 class="logo">Our logo here!</h4>
+      {{!-- do I want the logo class here? --}}
 
-    </div>
   </div>
-
 
   <div class="col-3">
     <h2 class="timer"></h2>
   </div>
+
+
+
 
 
 </nav>
@@ -24,20 +22,26 @@
 
 <!-- The sidebar -->
 <div class="sidebar light-card">
-  <a href="/kitchen/station/1"><i class="fas fa-leaf"></i> <br>
-    <p class="sidebarIcon">Salads</p>
+  <div class="dropleft">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <i class="fas fa-utensils"></i>
+      <p class="sidebarIcon ">Stations</p>
+    </a>
+
+    <div class="itemDropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/1">Salads</a>
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/2">Desserts</a>
+
+    </div>
+  </div>
+  <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
+    <p class="sidebarIcon ">Expo</p>
   </a>
 
-  <a href="/kitchen/station/2"><i class="fas fa-ice-cream"></i> <br>
-    <p class="sidebarIcon">Desserts</p>
-
-    <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
-      <p class="sidebarIcon ">Expo</p>
-    </a>
-
-    <a href="/kitchen/station/{{station}}/recall"><i class="fas fa-redo-alt"></i> <br>
-      <p class="sidebarIcon recallOrder">Recall Order</p>
-    </a>
+  <a href="/kitchen/station/{{station}}/recall"><i class="fas fa-redo-alt"></i> <br>
+    <p class="sidebarIcon recallOrder">Recall Order</p>
+  </a>
 
   </a>
   <a href="/"><i class="fas fa-home"></i> <br>
@@ -66,18 +70,29 @@
   <div class="row">
     {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
     <div class="col-6 startCol">
+      <div class="row">
 
-      {{#each NotStarted}}
-      {{> toCook}}
-      {{/each}}
+        {{#each NotStarted}}
+        {{> toCook}}
+        {{/each}}
+
+      </div>
+
+
 
     </div>
 
 
     <div class="col-6 cookingCol">
-      {{#each Working}}
-      {{> cooking}}
-      {{/each}}
+
+      <div class="row">
+
+        {{#each Working}}
+        {{> cooking}}
+        {{/each}}
+
+      </div>
+
     </div>
 
   </div>
