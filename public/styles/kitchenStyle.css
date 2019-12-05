@@ -147,10 +147,11 @@ body {
 
 .logo {
   font-family: 'Raleway', sans-serif;
-  font-size: 30spx;
+  font-size: 30px;
   margin-left: 40px;
   letter-spacing: 2px;
   font-weight: bolder;
+  box-shadow: 2px 2px 5px 4px rgba(0, 0, 255, .2);
 }
 
 .timer {
