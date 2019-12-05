@@ -10,6 +10,7 @@ body {
 .mainContainer{
   margin-top: 20px;  
   height: 100%;
+  align-content: center;
 }
 
 .timer {
@@ -24,6 +25,7 @@ body {
  {
   font-size: 15px;
 }
+
 .mainNav {
   background-color: white;
   margin-top: 0px !important;
@@ -33,6 +35,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 0px; 
   letter-spacing: 2px;
+  color: black;
 
 }
 
@@ -80,4 +83,105 @@ img {
  
   
   
+}
+
+.itemDropdown {
+  font-size: 15px !important;
+  margin-top: 0px !important;
+  font-family: 'Raleway', sans-serif;
+  align-content: right;
+  letter-spacing: 1px;
+  color: white !important; 
+  
+}
+.dropdown-item:hover {
+  background-color: rgb(168, 139, 83) !important;
+}
+.dropdown-menu {
+  background-color: orange !important;
+  
+ 
+}
+.menuHead{
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: black;
+  box-shadow: black 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  align-content: center;
+ 
+}
+
+
+ .buttonItems{
+   margin-top: 12px;
+  width: 170px;
+  height: 150px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+   background-color:  orange;
+ margin: 12px 3px 3px 3px;
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px 4px rgba(0, 0, 255, .2);
+  
+
+ }
+
+ input[type="text"], textarea {
+
+  background-color : #d1d1d1; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  
+
+}
+
+ .buttonKitchen {
+   margin-top: 5px;
+   margin-bottom: 10px;
+   font-family: 'Raleway', sans-serif;
+   letter-spacing: 0.5px;
+   font-size: 15px;
+   background-color: #2cb362; 
+   border-radius: 50px;
+   font-weight: bolder;
+   
+   border: 0.16em solid rgba(255,255,255,0);
+  
+   padding: 10px;
+ }
+
+
+ .colTableN {
+   margin-top: 10px;
+ }
+ .maindHeadCol {
+   margin-top: 10px;
+ }
+
+ 
+.rowMenu, .buttonKitchen {
+  margin-left: 350px;
+}
+
+ .tableNumber {
+  margin-left: 360px;
+}
+
+.tableNumber{
+  margin-top: 20px;
+}
+
+/* img {
+  border-radius: 100px;
+  height: 150px;
+ 
+} */
+.foot{
+  font-style: italic;
+  font-family: 'Raleway', sans-serif;   
 }

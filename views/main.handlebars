@@ -1,11 +1,8 @@
 <nav class="  navbar mainNav my-2 ">
 
-  <div class="row">
-    <div class=" col-6">
-      <h3 class="mainLogo">Our logo here! </h3>
 
-    </div>
-
+  <div class=" col-6 mainLogo">
+    <h3>Hello, </h3>
   </div>
   <div class="col-3">
 
@@ -19,68 +16,93 @@
 <!-- The sidebar -->
 <div class="sidebar light-card">
 
-  <a href="/kitchen/station/1"><i class="fas fa-leaf"></i> <br>
-    <p class="sidebarIcon">Salads</p>
+  <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
+    <p class="sidebarIcon ">Expo</p>
   </a>
 
-  <a href="/kitchen/station/2"><i class="fas fa-ice-cream"></i> <br>
-    <p class="sidebarIcon">Desserts</p>
-
-    <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
-      <p class="sidebarIcon ">Expo</p>
+  <div class="dropleft">
+    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-utensils"></i>
+      <p class="sidebarIcon ">Stations</p>
     </a>
+
+    <div class="itemDropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/1">Salads</a>
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/2">Desserts</a>
+
+    </div>
+  </div>
+
+
+  <a href="/kitchen/expo"> <i class="fas fa-sign-out-alt"></i><br>
+    <p class="sidebarIcon ">Sign out!</p>
+  </a>
 
 
 
 </div>
+
+
+
 <!-- end of sidebar -->
+
+
 <div class="container mainContainer">
+
   <div class="row">
-    <div class="col-6">
-      <h6 class="tableN">Table Number</h6>
-      <input id="order-number" class="form-control col-4 " type="text" placeholder="Table Number">
+    {{!-- <div class="col-6 colTableN">
+      <h6 class="menuHead">Menu</h6>
+
+    </div> --}}
+    <div class="col-6  ">
+
+
+
+      <input id="order-number" class="form-control tableNumber col-5 " type="text" placeholder="Table Number">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12  ">
       <div class="row">
-        <div class="col">
-          <h6>Select Menu Item</h6>
-          <div class="form-group menu-items">
-              {{#each menu}}
-              {{> menuItem}}
-              {{/each}}
-          </div>
-          <div class="">
 
-          </div>
-
-          <div class="mods">
-
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary send-to-db" type="submit">Send to Kitchen</button>
-              <h6> New Order (Close out order)</h6>
-              <button class="btn btn-warning reset">Reset</button>
-
-
-            </div>
-          </div>
-
+        <div class="form-group menu-items rowMenu col-5">
+          {{#each menu}}
+          <button class="buttonItems " id="item-{{this.id}}">{{this.name}}</button>
+          {{/each}}
 
         </div>
       </div>
 
 
-    </div>
-    <div class="col-6 float-right">
+      <div class="mods rowMenu">
 
-      <img src="caesar.jpg" alt="caesarSalad">
-      <img src="kale.jpg" alt="kaleSalad">
-      <img src="truffles.jpg" alt="truffles">
-      <img src=" icecream.jpg" alt="icecream">
+      </div>
+
+      <button class=" buttonKitchen send-to-db" type="submit" data-toggle="modal"
+        data-target=".bd-example-modal-sm">Send to Kitchen</button>
+
+      {{!-- modal --}}
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            Order Succesfully Created!
+          </div>
+        </div>
+      </div>
+      {{!-- modal --}}
+
+      {{!-- <button class="btn btn-warning reset"> New Order</button> --}}
+
+
     </div>
   </div>
 
 
 
-</div>
+
+
+
 
 </div>
