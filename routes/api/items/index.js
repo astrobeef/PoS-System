@@ -9,6 +9,17 @@ router.get("/", function (req, res) {
     });
 });
 
+//Get all items with the passing order number.
+router.get("/orderNumber/:num", function(req, res){
+    db.items.findAll({
+        where: {
+            orderNumber : req.params.num
+        }
+    }).then(function(dbItems){
+        res.json(dbItems);
+    })
+})
+
 router.post("/", function (req, res) {
 
     db.items.create(req.body).then(function (dbItems) {

@@ -51,6 +51,74 @@ $recallOrder.on("click", function () {
 
 });
 
+$orders.click(function (event) {
+  const HTMLParent = findCardParentIfExists(event.target);
+
+  if (HTMLParent) {
+    let orderNumber = $(HTMLParent).attr("id");
+
+    orderNumber = orderNumber.split("-");
+    orderNumber = parseInt(orderNumber[orderNumber.length - 1]);
+
+    $.ajax("/api/items/orderNumber/" + orderNumber, {
+      type: "GET"
+    }).then(function (itemsDB, error) {
+
+      generateItemsForModal(itemsDB, HTMLParent);
+      $modal.modal("show");
+    });
+
+  }
+  else {
+    console.warn("Could not find a card parent");
+  }
+});
+
+$modal.on("hidden.bs.modal", function(){
+
+  clearModal();
+
+})
+
+function findCardParentIfExists(HTMLelement) {
+  if (HTMLelement.parentElement != null) {
+    if ($(HTMLelement.parentElement).hasClass("expoCard")) {
+      return HTMLelement.parentElement;
+    }
+    else {
+      return findCardParentIfExists(HTMLelement.parentElement);
+    }
+  }
+  else {
+    return null;
+  }
+}
+
+function generateItemsForModal(items, parent) {
+
+  items.forEach(item => {
+
+    const listItem = $("<li>").addClass("liExpo list-group-item");
+    const itemName = $("<span>").text(item.name);
+    const itemMod = $("<small>").addClass("mods").text(item.mods);
+
+    listItem.append(itemName);
+    listItem.append(itemMod);
+
+    $modalList.append(listItem);
+  });
+
+  $("#modal-order-number").text(items[0].orderNumber);
+  $("#modal-time").text(items[0].currentTime);
+
+}
+
+function clearModal() {
+
+  $modalList.empty();
+
+}
+
 // setInterval(function () {
 
 //   $times = $(".current-time");
