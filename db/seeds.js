@@ -13,11 +13,11 @@ items.create({
 
 items.create({
 
-    name: "Green Salad",
-    orderNumber: 21,
+    name: "Kale Salad",
+    orderNumber: 25,
     station: 1,
     status: "working",
-    mods: "no dressing,",
+    mods: "no dressing",
     highlight: "#55AB55",
     averageTime: "4:00",
     currentTime: "0:00"

@@ -21,7 +21,14 @@
         <div class="card-body cardBody text-dark">
             <ul class=" ulExpo list-group-flush">
                 <li class=" liExpo list-group-item">{{this.name}} <br>
-                    <small class="mods">{{this.mods}}</small> </li>
+
+
+                {{#each this.modPackage}}
+
+                    <small class="mods {{this.modStyles}}">{{this.modText}}</small> <br>
+
+                {{/each}}
+                </li>
 
             </ul>
         </div>
