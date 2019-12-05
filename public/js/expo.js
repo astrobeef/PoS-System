@@ -3,6 +3,9 @@ var $deleteOrder = $("#deleteOrder");
 const $recallOrder = $(".recallOrder")
 var $completeOrder = $("#complete")
 
+const $orders = $(".expoContainer");
+const $modal = $("#myModal");
+const $modalList = $("#modal-list");
 
 $deleteOrder.on("click", function () {
 
