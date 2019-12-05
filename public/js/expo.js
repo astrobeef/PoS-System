@@ -3,6 +3,9 @@ var $deleteOrder = $("#deleteOrder");
 const $recallOrder = $(".recallOrder")
 var $completeOrder = $("#complete")
 
+const $orders = $(".expoContainer");
+const $modal = $("#myModal");
+const $modalList = $("#modal-list");
 
 $deleteOrder.on("click", function () {
 
@@ -23,10 +26,10 @@ $deleteOrder.on("click", function () {
 $completeOrder.on("click", function () {
 
   console.log("working")
-  var id = $(this).data("id");
+  const orderNumber = $(this).data("id");
 
   // Send the DELETE request.
-  $.ajax("/api/items/" + id, {
+  $.ajax("/api/items/orderNumber/" + orderNumber, {
     type: "DELETE"
   }).then(
     function () {
@@ -50,6 +53,75 @@ $recallOrder.on("click", function () {
   )
 
 });
+
+$orders.click(function (event) {
+  const HTMLParent = findCardParentIfExists(event.target);
+
+  if (HTMLParent) {
+    let orderNumber = $(HTMLParent).attr("id");
+
+    orderNumber = orderNumber.split("-");
+    orderNumber = parseInt(orderNumber[orderNumber.length - 1]);
+
+    $.ajax("/api/items/orderNumber/" + orderNumber, {
+      type: "GET"
+    }).then(function (itemsDB, error) {
+
+      generateItemsForModal(itemsDB, HTMLParent);
+      $modal.modal("show");
+    });
+
+  }
+  else {
+    console.warn("Could not find a card parent");
+  }
+});
+
+$modal.on("hidden.bs.modal", function(){
+
+  clearModal();
+
+})
+
+function findCardParentIfExists(HTMLelement) {
+  if (HTMLelement.parentElement != null) {
+    if ($(HTMLelement.parentElement).hasClass("expoCard")) {
+      return HTMLelement.parentElement;
+    }
+    else {
+      return findCardParentIfExists(HTMLelement.parentElement);
+    }
+  }
+  else {
+    return null;
+  }
+}
+
+function generateItemsForModal(items, parent) {
+
+  items.forEach(item => {
+
+    const listItem = $("<li>").addClass("liExpo list-group-item");
+    const itemName = $("<span>").text(item.name);
+    const itemMod = $("<small>").addClass("mods").text(item.mods);
+
+    listItem.append(itemName);
+    listItem.append(itemMod);
+
+    $modalList.append(listItem);
+  });
+
+  $("#modal-order-number").text(items[0].orderNumber);
+  $("#modal-time").text(items[0].currentTime);
+  $("#complete").attr("data-id", items[0].orderNumber);
+
+}
+
+function clearModal() {
+
+  $modalList.empty();
+
+}
 
 // setInterval(function () {
 

@@ -48,7 +48,10 @@
 
 
 <div class="container expoContainer">
+<<<<<<< HEAD
   {{#each items as |item|}}
+=======
+>>>>>>> a958332b6f45df8a6c6bbe470e99f58404de0116
 
   {{!-- Modal when order it's clicked --}}
   <div class="row">
@@ -59,11 +62,11 @@
             <div class="modal-header modalHeader">
 
               <div class="col-3">
-                <p class="tableN ">Table {{item.[0].orderNumber}}</p>
+                <p class="tableN ">Table <span id="modal-order-number">Order Number</span></p>
 
               </div>
               <div class="col-3">
-                <p class="tableN"><i class=" far fa-clock text-white "> {{item.[0].currentTime}}</i></p>
+                <p class="tableN"><i class=" far fa-clock text-white "> <span id="modal-time">Current time</i></p>
               </div>
 
               <div class="col-3 text-right">
@@ -73,8 +76,7 @@
 
             </div>
             <div class="px-2  modal-body">
-              <ul class=" ulExpo list-group-flush">
-                <li class=" liExpo list-group-item">{{this.name}} <br> <small class="mods">{{this.mods}}</small> </li>
+              <ul id = "modal-list" class=" ulExpo list-group-flush">
 
 
 
@@ -84,7 +86,7 @@
             <div class=" modal-footer">
               <div class="col text-right">
 
-                <input id="complete" class="btn btn-success" type="button" value="Complete" data-id="{{this.id}}">
+                <input id="complete" class="btn btn-success" type="button" value="Complete" data-id = "-1">
 
               </div>
 
@@ -102,7 +104,6 @@
       </div>
     </div>
   </div>
-  {{/each}}
   {{!-- End of the Modal--}}
 
 
