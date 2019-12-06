@@ -77,7 +77,7 @@ $orders.click(function (event) {
   }
 });
 
-$modal.on("hidden.bs.modal", function(){
+$modal.on("hidden.bs.modal", function () {
 
   clearModal();
 
@@ -124,45 +124,46 @@ function clearModal() {
 
 }
 
-// setInterval(function () {
+setInterval(function () {
 
-//   $times = $(".current-time");
+  console.log("incrementing time");
+  $times = $(".current-time");
 
-//   let element = 0;
-
-//   while($times[element])
-//   {
-//     const $time = $($times[element]);
-//     let timeID = $time.attr("id");
-//     timeID.split("-");
-//     timeID = parseInt(timeID[timeID.length - 1]);
-//     console.log(timeID);
-
-//     $time.text(incrementTime($time.text()));
+  let element = 0;
 
 
-//     element++;
+  while ($times[element]) {
+    const $time = $($times[element]);
+    let timeID = $time.attr("id");
+    timeID.split("-");
+    timeID = parseInt(timeID[timeID.length - 1]);
+    console.log(timeID);
 
-//     sendNewTime(timeID, $time.text());
-
-//   };
+    $time.text(incrementTime($time.text()));
 
 
-function sendNewTime(id, newTime)
-{
+    element++;
+
+    sendNewTime(timeID, $time.text());
+
+  };
+}, 1000
+)
+
+
+function sendNewTime(id, newTime) {
   $.ajax({
-    url : "/api/items/" + id,
-    type : "PUT",
-    data : {
-      currentTime : newTime
+    url: "/api/items/" + id,
+    type: "PUT",
+    data: {
+      currentTime: newTime
     }
-  }).then(function (res, err){
+  }).then(function (res, err) {
     console.log("Sent time");
   })
 }
 
-function incrementTime(currentTime)
-{
+function incrementTime(currentTime) {
   let newTime = currentTime;
 
   newTime = newTime.split(":");
@@ -170,16 +171,13 @@ function incrementTime(currentTime)
   let minutes = parseInt(newTime[0]);
   let seconds = parseInt(newTime[1]);
 
-  if(seconds < 59)
-  {
+  if (seconds < 59) {
     seconds++;
-    if(seconds < 10)
-    {
+    if (seconds < 10) {
       seconds = "0" + seconds;
     }
   }
-  else
-  {
+  else {
     minutes++;
     seconds = "00";
   }

@@ -26,7 +26,6 @@ router.post("/", function (req, res) {
         res.json(dbItems)
     });
 
-    console.log(req.body);
 });
 
 
@@ -56,7 +55,6 @@ router.delete("/orderNumber/:num", function(req,res){
 //update current time and status
 
 router.put("/:id", function (req, res) {
-    console.log(req.body)
 
     db.items.update(
         req.body,

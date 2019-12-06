@@ -14,7 +14,6 @@ router.get("/", function (req, res) {
             items: filterByTable(data),
             layout: "kitchen"
         }
-        console.log(item.items);
         res.render("expo", item);
     })
 
@@ -121,7 +120,6 @@ function styleMods(mods) {
         })
     }
 
-    console.log(modStylesArray);
     return modStylesArray;
 
 }

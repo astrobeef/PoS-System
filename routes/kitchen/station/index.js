@@ -17,7 +17,6 @@ router.get("/:id", function (req, res) {
             station : req.params.id
 
         }
-        console.log(item);
         res.render("station", item);
     })
 });
@@ -64,7 +63,6 @@ router.get("/:id/recall", function (req, res) {
 
         }
         res.render("recallOrder", item);
-        console.log(data)
     })
 
 });
