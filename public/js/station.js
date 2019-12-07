@@ -3,6 +3,7 @@
 var $toCook = $(".toCook");
 var $cooking = $(".cooking")
 var $restart = $(".restart")
+var $recallOrder = $(".recallOrder");
 
 $toCook.on("dblclick", function () {
 

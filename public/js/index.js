@@ -36,13 +36,10 @@ $(".menu-items").click(function (event) {
   console.log(event);
 
   let itemID = $(event.target).attr("id");
-  console.log(itemID);
 
   itemID = trimForID(itemID);
 
   API.getMenuItem(itemID).then(function (menuItem, err) {
-
-    console.log(menuItem[0]);
 
     clearPreviousModsIfExists();
     generateModifications(menuItem[0].mods);
