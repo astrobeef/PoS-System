@@ -22,7 +22,7 @@ Sequelize
 ### Link 
 Check it out!
 
-https://radiant-waters-32407.herokuapp.com/
+https://hidden-lowlands-14981.herokuapp.com/
 
 
 ![iphone](public/styles/completed.png) <br>
