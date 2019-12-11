@@ -1,30 +1,38 @@
 # Clean Kitchen Pos System 
 
 
-# Description
+## Description
 
+PoS systems are used in kitchens to track food orders and their progress.  However, these systems could use an upgrade within their design.
 
-A cleaner and user friendly Point of Sale System application for restaurant kitchen. 
+Our project is a readible, user-friendly PoS System for kitchens.  Currently set up for the back of the house.
 
-
-
-Key words* : 
-*Servers*, *Express.js*, *MySQL* , *API routes*, *Handeblars*, *Object-relational mapping*, *Model-View-Controller*, *Template engines* ,*Sequelize*, *CRUD*,
-
-
-### Technologies used 
+## Technologies used 
 Express.Js <br>
 Postman <br>
 Handlebar.js <br>
 Jquery <br>
 Sequelize
 
-### Link 
+## Screenshots
+
+![Server](public/serverEntry.png) <br>
+![Server](public/expoScreen.png) <br>
+![Server](public/stationScreen.png) <br>
+![Recall](public/completed.png) <br>
+
+## Link 
 Check it out!
 
 https://hidden-lowlands-14981.herokuapp.com/
 
 
-![iphone](public/styles/completed.png) <br>
+## Contributors
 
+Brian Graf (https://github.com/astrobeef/)
 
+Richard Klevan (https://github.com/raklevan)
+
+Cibelle Montor (https://github.com/cibellem)
+
+Donovan Youkhana (https://github.com/Dyoukhana)
